@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/Imena.unity
+- path: Assets/Scenes/pyataychast.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

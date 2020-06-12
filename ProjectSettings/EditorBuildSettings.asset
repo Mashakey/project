@@ -21,6 +21,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Imena.unity
     guid: c48b0390fcf000c428f5824ecb511842
   - enabled: 1
+    path: Assets/Scenes/Loadplay.unity
+    guid: 448bae261e075274d8685c266415401f
+  - enabled: 1
+    path: Assets/Scenes/pyataychast.unity
+    guid: 97efefb822139cf409ebcc9548460d7f
+  - enabled: 0
     path: Assets/Scenes/4.unity
     guid: 987b021f672aeaf4397bb8ca6fa8f182
   m_configObjects: {}
