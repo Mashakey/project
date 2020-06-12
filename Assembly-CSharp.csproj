@@ -65,6 +65,7 @@
      <Compile Include="Assets\Scripts\Ladiya.cs" />
      <Compile Include="Assets\Scripts\Load.cs" />
      <Compile Include="Assets\Scripts\loadplay.cs" />
+     <Compile Include="Assets\Scripts\Loadplaychess.cs" />
      <Compile Include="Assets\Scripts\Menu.cs" />
      <Compile Include="Assets\Scripts\Options.cs" />
      <Compile Include="Assets\Scripts\Peshka.cs" />
