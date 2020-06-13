@@ -41,8 +41,8 @@ public class BoardMeneger : MonoBehaviour
 	private void Start()
 	{
 		
-		whiteTime = TempClass.settimer;
-		blackTime = TempClass.settimer;
+		whiteTime = TempClass.settimer*60;
+		blackTime = TempClass.settimer*60;
 		Instance = this;
 		SpawnAllChesmans();
 	}

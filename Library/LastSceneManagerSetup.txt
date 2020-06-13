@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/wins.unity
+- path: Assets/Scenes/Zagruzka.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
