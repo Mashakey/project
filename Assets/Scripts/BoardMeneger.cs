@@ -1,9 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using System;
+using UnityEngine.SceneManagement;
 
 public class BoardMeneger : MonoBehaviour
 {
+	public float param = 1;
+	public float whiteTime;
+	public float blackTime;
+	public Text second1;
+	public Text second2;
+
+
 	public static BoardMeneger Instance { set; get; }
 	private bool[,] allowedMoves { set; get; }
 
@@ -27,21 +37,56 @@ public class BoardMeneger : MonoBehaviour
 	private Quaternion orientation = Quaternion.Euler(-90, -90, 0);
 	private Quaternion orientation2 = Quaternion.Euler(-90, -90, 180);
 
-	public bool isWiteTurn = true;
+	public static bool isWiteTurn = true;
 	private void Start()
 	{
+		
+		whiteTime = TempClass.settimer;
+		blackTime = TempClass.settimer;
 		Instance = this;
 		SpawnAllChesmans();
 	}
 
 	private void Update()
 	{
+		param -= Time.deltaTime;
+		if (param <= 0)
+		{
+			param = 1;
+			if (isWiteTurn == true)
+			{
+				if (whiteTime > 1)
+				{
+					whiteTime--;
+				}
+				else
+				{
+					TempClass.win = 1;
+					SceneManager.LoadScene(7);
+				}
+			}
+			if (isWiteTurn == false)
+			{
+				if (blackTime > 1)
+				{
+					blackTime--;
+				}
+				else
+				{
+					TempClass.win = 0;
+					SceneManager.LoadScene(7);
+				}
+			}
+		}
+
+		second1.text = Convert.ToString(whiteTime);
+		second2.text = Convert.ToString(blackTime);
 		UpdateSelection();
 		DrawChessboard();
 
 		if (Input.GetMouseButtonDown(0))
 		{
-			if (selectionX >= 0 && selectionY >= 0);
+			if (selectionX >= 0 && selectionY >= 0)
 			{
 				if (selectedChessmen == null)
 				{
@@ -102,20 +147,6 @@ public class BoardMeneger : MonoBehaviour
 				Destroy(c.gameObject);
 			}
 
-			if (x == EnPassantMove [0] && y == EnPassantMove [1])
-			{
-				if (isWiteTurn)
-
-					c = Chessmens[x, y - 1];
-
-				else
-					c = Chessmens[x, y + 1];
-				
-				activeChessman.Remove(c.gameObject);
-				Destroy(c.gameObject);
-			}
-			EnPassantMove[0] = -1;
-			EnPassantMove[1] = -1;
 			if (selectedChessmen.GetType () == typeof(Peshka))
 			{
 				if (y == 7)
@@ -130,16 +161,6 @@ public class BoardMeneger : MonoBehaviour
 					activeChessman.Remove(selectedChessmen.gameObject);
 					Destroy(selectedChessmen.gameObject);
 					SpawnChessman(7, x, y);
-				}
-				if (selectedChessmen.CurrentY == 1 && y == 3)
-				{
-					EnPassantMove[0] = x;
-					EnPassantMove[1] = y - 1;
-				}
-				else if (selectedChessmen.CurrentY == 6 && y == 3)
-				{
-					EnPassantMove[0] = x;
-					EnPassantMove[1] = y + 1;
 				}
 			}
 
@@ -281,15 +302,15 @@ public class BoardMeneger : MonoBehaviour
 	private void EndGame()
 	{
 		if (isWiteTurn)
-			Debug.Log("White team wins");
+        {
+			TempClass.win = 0;
+			SceneManager.LoadScene(7);
+		}
 		else
-			Debug.Log("Black team wins");
-		foreach (GameObject go in activeChessman)
-			Destroy(go);
-
-		isWiteTurn = true;
-		BoardHighlights.Instance.Hidenhighlights();
-		SpawnAllChesmans();
+        {
+			TempClass.win = 1;
+			SceneManager.LoadScene(7);
+		}
 	}
 }
 

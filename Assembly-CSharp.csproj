@@ -55,6 +55,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\asd.cs" />
      <Compile Include="Assets\asdf.cs" />
      <Compile Include="Assets\p1_event.cs" />
      <Compile Include="Assets\Scripts\BoardHighlights.cs" />
@@ -73,6 +74,8 @@
      <Compile Include="Assets\Scripts\Peshka.cs" />
      <Compile Include="Assets\Scripts\Slon.cs" />
      <Compile Include="Assets\Scripts\vvodimeni.cs" />
+     <Compile Include="Assets\sdatsya.cs" />
+     <Compile Include="Assets\Zanovo.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/1/aaaa/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>

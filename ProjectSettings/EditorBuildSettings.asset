@@ -26,6 +26,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/pyataychast.unity
     guid: 97efefb822139cf409ebcc9548460d7f
+  - enabled: 1
+    path: Assets/Scenes/wins.unity
+    guid: 3df084db014e8ee45b86dd5069a409ec
   - enabled: 0
     path: Assets/Scenes/4.unity
     guid: 987b021f672aeaf4397bb8ca6fa8f182
