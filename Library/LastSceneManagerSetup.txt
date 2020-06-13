@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/pyataychast.unity
+- path: Assets/Scenes/wins.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
